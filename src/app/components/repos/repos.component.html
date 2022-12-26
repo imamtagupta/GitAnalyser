@@ -1,0 +1,21 @@
+<div class="d-lg-flex justify-content-center align-items-center">
+
+    <picture class="col-xl-5">
+        <source srcset= "{{ langUrl }}" media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)" />
+        <img src="{{ langUrl }}" alt="" srcset="" width="auto">
+    </picture>
+
+
+
+    <!-- <div *ngFor="let repo of repos" class="list-group">
+        <a [href]="repo.html_url" class="list-group-item list-group-item-action text-primary"> {{repo.name}} </a>
+    </div> -->
+    <div class="col-lg-6">
+        <div *ngFor="let repo of repoNames" class="list-group ">
+            <picture>
+                <source srcset="{{ repo }}" media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)" />
+                <img src="{{ repo }}" alt="" srcset="" width="auto">
+            </picture>
+        </div>
+    </div>
+</div>

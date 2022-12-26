@@ -1,0 +1,36 @@
+<!-- <div class="card user-card text-primary">
+    <div class="background bg-info">
+        <img src="{{user.avatar_url}}" width="100" height="100" alt="" class="img-fluid rounded-circle border-white border-2 profile-pic">
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">
+            {{user.name}}
+        </h5>
+        <picture>
+            <source 
+              srcset="https://github-readme-stats.vercel.app/api?username=anuraghazra&show_icons=true&theme=dark"
+              media="(prefers-color-scheme: dark)"
+            />
+            <source
+              srcset="https://github-readme-stats.vercel.app/api?username=anuraghazra&show_icons=true"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+            />
+            <img src="https://github-readme-stats.vercel.app/api?username=anuraghazra&show_icons=true" />
+        </picture>
+        <a href="https://github.com/anuraghazra/github-readme-stats">
+            <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=anuraghazra&repo=github-readme-stats" />
+          </a>
+          <a href="https://github.com/anuraghazra/convoychat">
+            <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=anuraghazra&repo=convoychat" />
+          </a>
+    </div>
+</div> -->
+<div class="card align-items-center overflow-hidden">
+    <div class="background my-3">
+        <img src="{{user.avatar_url}}" width="150" height="150" class="img-fluid rounded-circle border-white border-2 profile-pic">
+    </div>
+    <picture>
+        <source srcset= "{{ statsUrl }}" media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)" />
+        <img src="{{ statsUrl }}" alt="" srcset="" width="auto">
+    </picture>
+</div>

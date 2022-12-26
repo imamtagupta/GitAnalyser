@@ -1,0 +1,30 @@
+<div class="container overflow-hidden">
+    <form action="" class="form-inline my-4 d-flex justify-content-center" (ngSubmit)="handleFind()">
+        <div class="form-group d-flex">
+            <label for="usernam"> Username </label>
+            <input
+                [(ngModel)]="username"
+                type="text" 
+                name="username" 
+                class="form-control mx-sm-3">
+        </div>
+        <button class="btn btn-primary">Find User</button>
+    </form>
+
+    <div *ngIf="error" class="alert alert-danger m-5" role="alert">
+        <!-- ERROR MESSAGE    -->
+        {{ error }}
+    </div>
+    <div *ngIf="isloading">
+        <div *ngIf="user" class="row mt-3 d-lg-flex">
+            <div class="col col-md-4">
+                <app-user-card [user]="user"></app-user-card>
+            </div>
+            <div class="col col-md-8 ">
+                <app-repos [repoUrl]="user.repos_url" [userName]="user.login"></app-repos>
+            </div>
+        </div>
+    </div>
+
+</div>
+

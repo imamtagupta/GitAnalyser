@@ -12,27 +12,23 @@ const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['signin']);
 const redirectLoggedInToHome = () => redirectLoggedInTo(['']);
 
 export const routes: Routes = [
-    { 
-      path: '',
-      component: HomeComponent 
-    },
-    { 
-      path: 'signin', 
-      component: SigninComponent,
-      canActivate: [AngularFireAuthGuard], 
-      data: { authGuardPipe: redirectLoggedInToHome }
-    },
-    { 
-      path: 'signup', 
-      component: SignupComponent,     
-      canActivate: [AngularFireAuthGuard], 
-      data: { authGuardPipe: redirectUnauthorizedToLogin }
-    },
-    { 
-      path: '**', 
-      component: PagenotfoundComponent,        
-      canActivate: [AngularFireAuthGuard], 
-    },
+  {
+    path: 'signin',
+    component: SigninComponent,
+    canActivate: [AngularFireAuthGuard],
+    data: { authGuardPipe: redirectLoggedInToHome },
+  },
+  { path: 'signup', component: SignupComponent },
+  {
+    path: '',
+    component: HomeComponent,
+    canActivate: [AngularFireAuthGuard],
+    data: { authGuardPipe: redirectUnauthorizedToLogin },
+  },
+  {
+    path: '**',
+    component: PagenotfoundComponent,
+  },
 ];
 
 
